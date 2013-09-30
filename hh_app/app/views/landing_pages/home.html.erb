@@ -1,2 +1,26 @@
-<h1>LandingPages#home</h1>
-<p>Find me in app/views/landing_pages/home.html.erb</p>
+<head>
+</head>
+
+<body>
+<h1>Hello there!</h1>
+<p>Check out these cool tables:<p>
+	<ol>
+		<li>Users</li>
+		<ul>
+			<li><%= link_to "index", users_path%></li>
+			<li><%= link_to "new", new_user_path%></li>
+		</ul>
+
+		<li>Courses</li>
+		<ul>
+			<li>...</li>
+		</ul>
+
+		<li>Reference Info</li>
+		<ul>
+			<li>...</li>
+		</ul>
+	</ol>
+
+</body>
+

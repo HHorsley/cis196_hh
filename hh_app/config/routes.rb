@@ -1,9 +1,7 @@
 HhApp::Application.routes.draw do
   resources :penn_reference_infos
 
-  get "courses/new"
-
-  get "courses/index"
+  resources :courses
 
   resources :users
   

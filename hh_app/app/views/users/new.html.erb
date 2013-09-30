@@ -1,2 +1,17 @@
 <%= form_for(@user) do |f| %>
-	<div class="field"
+	<div class="field">
+		<p>Name<p>
+		<%=f.text_field :name%>
+	</div>
+	<div class="field">
+		<p>Email<p>
+		<%=f.text_field :name%>
+	</div>
+	<div class="field">
+		<p>Password<p>
+		<%=f.text_field :name%>
+	</div>
+	<div class="actions">
+		<%=f.submit%>
+	</div>
+<%end%>
