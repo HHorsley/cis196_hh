@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  department: MyString
+  topic: MyString
+  desired_instructor: MyString
+  desired_material: MyString
+  num_users_interested: 1
+
+two:
+  department: MyString
+  topic: MyString
+  desired_instructor: MyString
+  desired_material: MyString
+  num_users_interested: 1

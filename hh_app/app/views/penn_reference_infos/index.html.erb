@@ -1,0 +1,27 @@
+<h1>Listing penn_reference_infos</h1>
+
+<table>
+  <tr>
+    <th>Department</th>
+    <th>Instructor firstname</th>
+    <th>Instructor lastname</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @penn_reference_infos.each do |penn_reference_info| %>
+  <tr>
+    <td><%= penn_reference_info.department %></td>
+    <td><%= penn_reference_info.instructor_firstname %></td>
+    <td><%= penn_reference_info.instructor_lastname %></td>
+    <td><%= link_to 'Show', penn_reference_info %></td>
+    <td><%= link_to 'Edit', edit_penn_reference_info_path(penn_reference_info) %></td>
+    <td><%= link_to 'Destroy', penn_reference_info, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Penn reference info', new_penn_reference_info_path %>

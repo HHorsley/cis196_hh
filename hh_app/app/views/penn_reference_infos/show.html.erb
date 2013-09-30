@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Department:</b>
+  <%= @penn_reference_info.department %>
+</p>
+
+<p>
+  <b>Instructor firstname:</b>
+  <%= @penn_reference_info.instructor_firstname %>
+</p>
+
+<p>
+  <b>Instructor lastname:</b>
+  <%= @penn_reference_info.instructor_lastname %>
+</p>
+
+
+<%= link_to 'Edit', edit_penn_reference_info_path(@penn_reference_info) %> |
+<%= link_to 'Back', penn_reference_infos_path %>

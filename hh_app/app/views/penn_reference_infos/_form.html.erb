@@ -1,0 +1,29 @@
+<%= form_for(@penn_reference_info) do |f| %>
+  <% if @penn_reference_info.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@penn_reference_info.errors.count, "error") %> prohibited this penn_reference_info from being saved:</h2>
+
+      <ul>
+      <% @penn_reference_info.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :department %><br />
+    <%= f.text_field :department %>
+  </div>
+  <div class="field">
+    <%= f.label :instructor_firstname %><br />
+    <%= f.text_field :instructor_firstname %>
+  </div>
+  <div class="field">
+    <%= f.label :instructor_lastname %><br />
+    <%= f.text_field :instructor_lastname %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
