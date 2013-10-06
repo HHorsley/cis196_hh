@@ -1,27 +1,22 @@
-<h1>Listing penn_reference_infos</h1>
+<h1>Reference Info for Penn</h1>
 
 <table>
   <tr>
     <th>Department</th>
     <th>Instructor firstname</th>
     <th>Instructor lastname</th>
-    <th></th>
-    <th></th>
-    <th></th>
   </tr>
 
-<% @penn_reference_infos.each do |penn_reference_info| %>
+<% @penn_reference_infos.each do |refInfo| %>
   <tr>
-    <td><%= penn_reference_info.department %></td>
-    <td><%= penn_reference_info.instructor_firstname %></td>
-    <td><%= penn_reference_info.instructor_lastname %></td>
-    <td><%= link_to 'Show', penn_reference_info %></td>
-    <td><%= link_to 'Edit', edit_penn_reference_info_path(penn_reference_info) %></td>
-    <td><%= link_to 'Destroy', penn_reference_info, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= refInfo.department %></td>
+    <td><%= prefInfo.instructor_firstname %></td>
+    <td><%= refInfo.instructor_lastname %></td>
+    <td><%= link_to 'Show Instructor', refInfo_path(refInfo.id) %></td>
+    <td><%= link_to 'Edit Instructor', edit_refInfo_path(refInfo.id) %></td>
+    <td><%= button_to 'Destroy Instructor', refInfo, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
-
-<%= link_to 'New Penn reference info', new_penn_reference_info_path %>

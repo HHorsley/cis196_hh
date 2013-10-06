@@ -1,5 +1,19 @@
-<h1>New penn_reference_info</h1>
+<h1>Add Reference Info for Penn</h1>
 
-<%= render 'form' %>
-
-<%= link_to 'Back', penn_reference_infos_path %>
+<%= form_for(@user) do |f| %>
+	<div class="field">
+		<p>Instructor First Name<p>
+		<%=f.text_field :instructor_firstname %>
+	</div>
+	<div class="field">
+		<p>Instructor Last Name<p>
+		<%=f.text_field :instructor_lastname %>
+	</div>
+	<div class="field">
+		<p>Instructor Department<p>
+		<%=f.text_field :department %>
+	</div>
+	<div class="actions">
+		<%=f.submit%>
+	</div>
+<%end%>
