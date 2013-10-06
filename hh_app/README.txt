@@ -5,6 +5,13 @@ The Heroku page: http://frozen-fjord-4579.herokuapp.com/
 
 
 --
+(10/8)
+ISSUES: Had significant issues with making my "course" model belong to the "user" model. This was ultimately resolved with some db/migration stuff but took a while. I also had a lot of typos to sort out.
+
+WHAT I DID: I added show, edit, destroy views to the courses and penn_reference_info models. I also made the courses model belong to the user model.
+
+
+--
 (10/1)
 ISSUES: Ran into a few bugs that I was able to find: forgot to run heroku run db:migrate. Also, forgot an "end" in the controller. Survived though.
 
