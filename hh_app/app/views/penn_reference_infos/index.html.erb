@@ -10,10 +10,10 @@
 <% @penn_reference_infos.each do |refInfo| %>
   <tr>
     <td><%= refInfo.department %></td>
-    <td><%= prefInfo.instructor_firstname %></td>
+    <td><%= refInfo.instructor_firstname %></td>
     <td><%= refInfo.instructor_lastname %></td>
-    <td><%= link_to 'Show Instructor', refInfo_path(refInfo.id) %></td>
-    <td><%= link_to 'Edit Instructor', edit_refInfo_path(refInfo.id) %></td>
+    <td><%= link_to 'Show Instructor', penn_reference_info_path(refInfo.id) %></td>
+    <td><%= link_to 'Edit Instructor', edit_penn_reference_info_path(refInfo.id) %></td>
     <td><%= button_to 'Destroy Instructor', refInfo, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>
