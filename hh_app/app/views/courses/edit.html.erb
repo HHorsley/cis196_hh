@@ -1,0 +1,26 @@
+<h1>Edit Course Idea</h1>
+<%= form_for(@course) do |f| %>
+	<div class="field">
+		<p>Department</p>
+		<%= f.text_field :department %>
+	</div>
+	<div class="field">
+		<p>Topic/Title</p>
+		<%= f.text_field :topic %>
+	</div>
+	<div class="field">
+		<p>Rough Description</p>
+		<%= f.text_field :description %>
+	</div>
+	<div class="field">
+		<p>Desired instructor</p>
+		<%= f.text_field :desired_instructor %>
+	</div>
+	<div class="field">
+		<p>User</p>
+		<%= f.collection_select :user_id, User.all, :id, :name %>
+	</div>
+	<div class="actions">
+		<%= f.submit %>
+	</div>
+<% end %>
