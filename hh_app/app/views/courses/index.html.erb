@@ -1,11 +1,10 @@
 <table>
 	<tr>
-		<td>Department</td>
-		<td>Topic</td>
-		<td>Materials/Inspiration</td>
-		<td>Desired Instructor</td>
-		<td>Idea Creator</td>
-		<td>Number of students who want</td>
+		<td><strong>Department</strong></td>
+		<td><strong>Topic</strong></td>
+		<td><strong>Materials/Inspiration</strong></td>
+		<td><strong>Desired Instructor</strong></td>
+		<td><strong>Idea Creator</strong></td>
 	</tr>
 	<%= @courses.each do |course| %>
 	<tr>
@@ -14,7 +13,6 @@
 		<td><%= course.desired_material %></td>
 		<td><%= course.desired_instructor %></td>
 		<td><%= course.user.name %></td>
-		<td><%= course.num_users_interested %></td>
 	</tr>
 	<% end %>
 </table>
