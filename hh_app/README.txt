@@ -4,6 +4,14 @@ Hunter Horsley
 The Heroku page: http://frozen-fjord-4579.herokuapp.com/
 
 
+
+--
+(10/15)
+ISSUES: Couldn't get the views to link to the bootstrap file in my asset directory so I had to use a cdn. Would like to figure out what was happening there though. Also, I don't think the password confirmation password is working so I'd like to sort that out (though it didn't seem it was required to be working for this homework if I had enough others)
+
+WHAT I DID: I added both application styling and homepage styling. Also added over 5 validators between the user and course models. 
+
+
 --
 (10/8)
 ISSUES: Had significant issues with making my "course" model belong to the "user" model. This was ultimately resolved with some db/migration stuff but took a while. I also had a lot of typos to sort out.

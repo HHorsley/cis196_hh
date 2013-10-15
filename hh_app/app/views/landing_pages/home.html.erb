@@ -1,7 +1,38 @@
 <head>
+
+
+
 </head>
 
-<body style= "background-image:url(https://dl.dropboxusercontent.com/u/45843110/prof_huge_chalk_board_bw_1.jpg)">
+<body style= "background-image:url(https://dl.dropboxusercontent.com/u/45843110/prof_huge_chalk_board_bw_2.jpg);">
+	<div class="container">
+	  <div class="hero-unit">
+	    <h1>Hello there!</h1>
+	    <p style="font-family:helvetica;font-weight:thin;font-size:24px;line-height:23pt;padding:10px 0px">This will be an app for crowdsourcing student ideas and demand for college courses. We live in an age of consumer-producer collaboration around supply. DueCourse brings this wonderful dynamic to eduction.</p>
+	    <p><a class="btn btn-primary btn-large" style="color:#fff" <%= link_to "Create Course Idea »", new_course_path %></></a></p>
+	  </div>
+		<div class="row">
+	        <div class="span4">
+	          <h2 style="color:#E8E8E8">Courses</h2>
+	          <p><a class="btn" <%= link_to "View courses", courses_path %></></a></p>
+	        </div>
+	        <div class="span4">
+	          <h2 style="color:#E8E8E8">Users</h2>
+	          <p><a class="btn" <%= link_to "View users", users_path %></></a></p>
+	       </div>
+	        <div class="span4">
+	          <h2 style="color:#E8E8E8">Reference</h2>
+	          <p><a class="btn" <%= link_to "View info", penn_reference_infos_path %></></a></p>
+	        </div>
+	      </div>
+	  </div>
+	</div>
+    </div> 
+
+
+</body>
+
+<!--
 <h1>Hello there!</h1>
 <p>This will be an app for crowdsourcing </br>
 	student ideas and demand for college courses. </br> Check out these cool tables:<p>
@@ -24,5 +55,4 @@
 		</ul>
 	</ol>
 
-</body>
-
+-->

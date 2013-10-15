@@ -1,3 +1,14 @@
+<div class="error-msg">
+	<% if @course.errors.any? %>
+		<ul>
+			<% @course.errors.full_messages.each do |msg| %>
+				<li><%= msg %></li> 
+			<% end %>
+		</ul>
+		</div> 
+	<% end %>
+</div>
+
 <h1>Course Idea</h1>
 <%= form_for(@course) do |f| %>
 	<div class="field">
