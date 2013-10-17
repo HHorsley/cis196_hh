@@ -1,4 +1,6 @@
 HhApp::Application.routes.draw do
+  devise_for :users
+
   resources :penn_reference_infos
 
   resources :courses
