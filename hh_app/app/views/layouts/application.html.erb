@@ -9,10 +9,9 @@
 
   <style>
   body {
-    padding-top: 60px;
-    padding-bottom: 10px;
+    padding: 100px 40px 10px;
+ 
   }
-
   </style>
 
 </head>
@@ -28,7 +27,7 @@
       <a class="brand" href="/">DueCourse</a>
       <div class="nav-collapse collapse">
         <ul class="nav">
-          <li class="active">
+          <li>
           	<a href="/">About</a>
           </li>
           <li>
@@ -39,8 +38,15 @@
           </li>
         </ul>
         <form class="navbar-form pull-right">
-          <button type="link" class="btn"><%= link_to "Sign Up", new_user_path %></button>
-          <button type="link" class="btn"><%= link_to "Sign In", users_path %></button>
+          <% if !user_signed_in? %>
+            <button type="link" class="btn"><%= link_to "Sign Up", new_user_path %></button>
+            <button type="link" class="btn"><%= link_to "Sign In", user_session_path %></button>
+          <% end %>
+          <% if user_signed_in? %>
+          <ul class="nav">
+            <li style="color:white"><%= link_to 'Logout', destroy_user_session_path, method: :delete %> </li>
+          </ul>
+          <% end %>
         </form>
       </div>
     </div>
@@ -55,6 +61,7 @@
 <% end %>
 
 <%= yield %>
+
 
 </body>
 </html>

@@ -4,6 +4,11 @@ Hunter Horsley
 The Heroku page: http://frozen-fjord-4579.herokuapp.com/
 
 
+--
+(10/29)
+ISSUES: I'm having a bit of trouble blocking some pages from logged out users and not others. Also still have to meet up with Jennifer to fix the issue causing the page to crash (deleting data in one table that gets called by another)
+
+WHAT I DID: I implemented Devise and setup login/logout/sign up pages as well as permissions to other pages based on login status.
 
 --
 (10/15)
