@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
-   before_filter :authenticate_user!, :except => [:home, :new]
+   before_filter :authenticate_user!, :except => [:home, :new, :index]
 #   before_filter :check_user_logged_in!, :except => [:home]
 
 #   private

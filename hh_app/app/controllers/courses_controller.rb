@@ -1,11 +1,15 @@
 class CoursesController < ApplicationController
   def new
   	@course = Course.new
+    if !user_signed_in? 
+      redirect_to new_user_session_path
+    end
   end
 
   def create
   	@course = Course.new(params[:course])
   	if @course.save 
+      Notifications.new_course(@course).deliver
   		redirect_to courses_path
   	else
   		render 'new'
@@ -22,6 +26,8 @@ class CoursesController < ApplicationController
 
   def edit
     @course = Course.find(params[:id])
+    if @user.id 
+    end
   end
 
   def update
@@ -38,5 +44,6 @@ class CoursesController < ApplicationController
     @course.destroy
     redirect_to courses_path
   end
-
 end
+
+

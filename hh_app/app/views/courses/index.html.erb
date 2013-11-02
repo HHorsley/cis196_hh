@@ -15,7 +15,11 @@
 		<td><%= course.topic %></td>
 		<td><%= course.description %></td>
 		<td><%= course.desired_instructor %></td>
-		<td><%= course.user.name %></td>
+		<%if course.user == nil %>
+			<td>N/A</td>
+		<% else%>
+			<td><%=  course.user.name %></td>
+		<%end%>
 		<td><%= link_to "show course", course_path(course.id) %></td>
 		<td><%= link_to "edit course", edit_course_path(course.id) %></td>
 		<td><%= button_to "destroy course", course, :confirm => "Are you sure you want to destroy this course?", method: :delete %></td>
