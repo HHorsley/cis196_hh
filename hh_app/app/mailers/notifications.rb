@@ -6,9 +6,14 @@ class Notifications < ActionMailer::Base
   #
   #   en.notifications.new_user.subject
   #
-  def new_course
+  def protect_against_forgery?
+      false
+  end
+
+  def new_course (course)
     @greeting = "Oh, hey there!"
-    @id = tasklist.id
+    @id = course.id
+
 
     mail to: course.user.email
   end

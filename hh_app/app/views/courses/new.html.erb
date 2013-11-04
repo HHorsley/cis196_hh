@@ -13,7 +13,7 @@
 <%= form_for(@course) do |f| %>
 	<div class="field">
 		<p>Department</p>
-		<%= f.text_field :department %>
+		<%= f.text_field :department, :style => "width: 40px;"%>
 	</div>
 	<div class="field">
 		<p>Topic/Title</p>
@@ -21,7 +21,7 @@
 	</div>
 	<div class="field">
 		<p>Rough Description</p>
-		<%= f.text_field :description %>
+		<%= f.text_area :description, :style => "height: 200px;"%>
 	</div>
 	<div class="field">
 		<p>Desired instructor</p>

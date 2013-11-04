@@ -10,5 +10,10 @@
 		<p><strong>IDEATOR:</strong> <%= @course.user.name %></p>
 		<p><strong>DESCRIPTION:</strong> <%= @course.description %></p>
 		<p><strong>DESIRED INSTRUCTOR: </strong><%= @course.desired_instructor %></p>
+		<%= pluralize @votes.reputation_value_for(:votes).to_i, "vote" %>
+			<% if current_user && !current_user.voted_for?(course) %>
+			  | <%= button_to "REQUEST", vote_course_path(course, type: "up"), method: "post" %>
+			<% end %>
+		<%= course.total_votes %>
 	</div>
 </body>

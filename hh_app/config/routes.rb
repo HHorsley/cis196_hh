@@ -3,7 +3,9 @@ HhApp::Application.routes.draw do
 
   resources :penn_reference_infos
 
-  resources :courses
+  resources :courses do
+    member { post :vote }
+  end
 
   resources :users
   

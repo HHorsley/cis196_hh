@@ -17,11 +17,20 @@ class CoursesController < ApplicationController
   end
 
   def index
-    @courses = Course.all 
+    @courses = Course.all
+    @courses = Course.find_with_reputation(:votes, :all, order: "votes desc") 
   end
 
   def show
     @course = Course.find(params[:id])
+    @votes = Course.find_with_reputation(:votes, :all, order: "votes desc")
+
+  end
+
+  def vote
+    value = params[:type] == "up" ? 1 : -1
+    @course = Course.find(params[:id])
+    @course.add_or_update_evaluation(:votes, value, current_user)
   end
 
   def edit
