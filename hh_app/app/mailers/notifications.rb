@@ -12,7 +12,7 @@ class Notifications < ActionMailer::Base
 
   def new_course (course)
     @greeting = "Oh, hey there!"
-    @id = course.id
+    @id = course.topic
 
 
     mail to: course.user.email
