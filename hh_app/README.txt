@@ -5,6 +5,12 @@ The Heroku page: http://frozen-fjord-4579.herokuapp.com/
 
 
 --
+(11/5)
+ISSUES: Because I used the Heroku interface to add Sendgrid, isntead of the command line, I had some issues getting credentials and had to remove it, and then re-add it via command line. Also, I'm trying to implement a voting system which is giving me a big of a headache.
+
+WHAT I DID: Added Sendgrid Heroku addon so that you get an email when you create a course that says the name of the course you created.
+
+--
 (10/29)
 ISSUES: I'm having a bit of trouble blocking some pages from logged out users and not others. Also still have to meet up with Jennifer to fix the issue causing the page to crash (deleting data in one table that gets called by another)
 
