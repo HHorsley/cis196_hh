@@ -1,7 +1,7 @@
 Hunter Horsley
 
 --
-The Heroku page: http://duecourse.herokuapp.com/
+The Heroku page: http://duecourse.org/
 
 
 --
