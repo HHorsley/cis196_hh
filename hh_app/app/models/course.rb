@@ -9,4 +9,6 @@ class Course < ActiveRecord::Base
       source: :user,
       aggregated_by: :sum
 
+    scope :rank, -> { order(:topic).limit(10)}
+
 end

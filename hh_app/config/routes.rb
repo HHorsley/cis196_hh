@@ -10,7 +10,8 @@ HhApp::Application.routes.draw do
   resources :users
   
   get "landing_pages/home"
-
+  get "landing_pages/about"
+  
   root :to => 'landing_pages#home'
 
   # The priority is based upon order of creation:

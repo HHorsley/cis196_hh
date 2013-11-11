@@ -17,7 +17,7 @@ class CoursesController < ApplicationController
   end
 
   def index
-    @courses = Course.all
+    @courses = Course.rank
     #@courses = Course.find_with_reputation(:votes, :all, order: "votes desc") 
   end
 
