@@ -10,8 +10,32 @@
   <style>
   body {
     padding: 100px 40px 10px;
- 
   }
+
+  .navbar-inverse .navbar-inner {
+    background-color: #63B691;
+    background-image: -moz-linear-gradient(top, #63B691, #3E8462);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#63B691), to(#3E8462));
+    background-image: -webkit-linear-gradient(top, #63B691, #3E8462);
+    background-image: -o-linear-gradient(top, #63B691, #3E8462);
+    background-image: linear-gradient(to bottom, #63B691, #3E8462);
+    background-repeat: repeat-x;
+    border-color: #3E8462;
+    }
+
+    .navbar-inverse .nav > li > a {
+    color: #333333;
+    }
+
+    .navbar-inverse .brand {
+    color: #333333;
+    }
+
+    .navbar-inverse .brand:hover {
+    text-decoration: none;
+    background-color: transparent;
+    }
+
   </style>
 
 </head>
@@ -28,7 +52,7 @@
       <div class="nav-collapse collapse">
         <ul class="nav">
           <li>
-          	<a href="/">About</a>
+          	<%= link_to "About", root_path %>
           </li>
           <li>
           	<%= link_to "Vote", courses_path %>
