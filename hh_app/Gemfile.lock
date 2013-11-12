@@ -125,7 +125,7 @@ PLATFORMS
 DEPENDENCIES
   activerecord-reputation-system
   coffee-rails (~> 3.2.1)
-  devise
+  devise (= 2.2.7)
   jquery-rails
   letter_opener!
   pg
