@@ -5,6 +5,12 @@ The Heroku page: http://duecourse.org/
 
 
 --
+(11/12)
+ISSUES: Implementing a scope was pretty straight forward for me. I'm still having trouble with logout which is unrelated to this assignment but I'd love any troubleshooting tips!
+
+WHAT I DID: I put a scope called rank on my courses index view. It orders the courses and limits the number pulled from the database to 10.
+
+--
 (11/5)
 ISSUES: Because I used the Heroku interface to add Sendgrid, isntead of the command line, I had some issues getting credentials and had to remove it, and then re-add it via command line. Also, I'm trying to implement a voting system which is giving me a big of a headache.
 
