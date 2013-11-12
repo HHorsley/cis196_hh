@@ -9,7 +9,7 @@
 
   <style>
   body {
-    padding-top: 100px;
+    padding-top: 0;
   }
 
   .navbar-inverse .navbar-inner {
@@ -36,14 +36,33 @@
     background-color: transparent;
     }
 
-    body {
-    background-color: rgba(99, 182, 145, 0.15);
+    .yield_container {
+    background-color: rgba(230, 230, 230, 0.75);
+    position: absolute;
+    width: 100%;
+    padding-top: 120px;
+    padding-bottom: 155px;
+    }
+    
+    .navbar-inverse .nav {
+    }
+
+    .navbar-inverse .brand {
+      font-weight: 800;
+    }
+
+    .container {
+    }
+
+    .yield {
+      padding: 0 auto 0 auto;
     }
 
   </style>
 
 </head>
-<body>
+<body style= "background-image:url(https://dl.dropboxusercontent.com/u/45843110/prof_huge_chalk_board_bw_2.jpg);">
+<div class="yield_container">
 <div class="navbar navbar-inverse navbar-fixed-top">
   <div class="navbar-inner">
     <div class="container">
@@ -88,7 +107,8 @@
   <p class="alert alert-error"><%= alert %></p>
 <% end %>
 
-<%= yield %>
+<div class="yield span8 offset2"><%= yield %></div>
 
+</div>
 </body>
 </html>

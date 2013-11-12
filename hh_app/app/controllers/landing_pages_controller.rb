@@ -1,6 +1,6 @@
 class LandingPagesController < ApplicationController
 
-  layout "home"
+  layout "home", :except => [:about]
 
   def home
   	#if !user_signed_in? 
