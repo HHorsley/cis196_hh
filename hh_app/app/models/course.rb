@@ -5,10 +5,6 @@ class Course < ActiveRecord::Base
   	validates :topic, presence: true, uniqueness: true
   	validates :user_id, presence: true
 
-  	has_reputation :votes,
-      source: :user,
-      aggregated_by: :sum
-
     scope :rank, -> { order(:topic).limit(10)}
 
 end

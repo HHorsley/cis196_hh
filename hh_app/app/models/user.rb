@@ -15,10 +15,4 @@ class User < ActiveRecord::Base
   validates :email, format: {with: emailFormatValidation}, uniqueness: true
   validates :password, confirmation: true
 
-  has_many :evaluations, class_name: "RSEvaluation", as: :source
-  has_reputation :votes, source: {reputation: :votes, of: :courses}, aggregated_by: :sum
-
-  def voted_for?(course)
-    evaluations.where(target_type: course.class, target_id: course.id).present?
-  end
 end
