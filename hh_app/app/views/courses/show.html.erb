@@ -10,5 +10,7 @@
 		<p><strong>IDEATOR:</strong> <%= @course.user.name %></p>
 		<p><strong>DESCRIPTION:</strong> <%= @course.description %></p>
 		<p><strong>DESIRED INSTRUCTOR: </strong><%= @course.desired_instructor %></p>
+		<%= "Students requesting: #{@course.votes_for}" %>
+		<%= button_to "REQUEST", vote_up_course_path(@course.id) %>
 	</div>
 </body>

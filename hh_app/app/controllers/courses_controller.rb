@@ -17,13 +17,11 @@ class CoursesController < ApplicationController
   end
 
   def index
-    @courses = Course.rank
-    #@courses = Course.find_with_reputation(:votes, :all, order: "votes desc") 
+    @courses = Course.all
   end
 
   def show
     @course = Course.find(params[:id])
-    #@votes = Course.find_with_reputation(:votes, :all, order: "votes desc")
 
   end
 
@@ -47,6 +45,29 @@ class CoursesController < ApplicationController
     @course.destroy
     redirect_to courses_path
   end
+
+  def vote_up
+    begin
+      current_user.vote_for(@course = Course.find(params[:id]))
+      redirect_to course_path(@course.id) 
+    rescue ActiveRecord::RecordInvalid
+      redirect_to course_path(@course.id)  
+    end
+  end
+  
+  def vote_down
+    begin
+      current_user.vote_against(@course = Course.find(params[:id]))
+      #this is what will happen if the vote succeeds(right now a user can only vote once per course)
+      #either way, right now it stays on the courses index, but it could do whatever you want
+      redirect_to course_path(@course.id) 
+    rescue ActiveRecord::RecordInvalid
+     #this is what will happen if the vote fails(right now a user can only vote once per course)
+     #either way, right now it stays on the courses index, but it could do whatever you want
+      redirect_to course_path(@course.id) 
+    end
+  end
+
 end
 
 

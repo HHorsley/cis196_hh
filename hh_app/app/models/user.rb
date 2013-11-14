@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+
+  acts_as_voter
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
@@ -14,5 +16,8 @@ class User < ActiveRecord::Base
   emailFormatValidation =/[a-z.-]+@[a-z \d -.]+[.][a-z]+/i 
   validates :email, format: {with: emailFormatValidation}, uniqueness: true
   validates :password, confirmation: true
+
+
+
 
 end
