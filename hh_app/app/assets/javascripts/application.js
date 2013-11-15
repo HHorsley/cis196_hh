@@ -13,3 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+$("tr[data-link]").click(function() {
+  window.location = this.data("link")
+})
