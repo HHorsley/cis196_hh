@@ -15,5 +15,6 @@
 //= require_tree .
 
 $("tr[data-link]").click(function() {
-  window.location = this.data("link")
+  window.location = this.dataset.link
+  console.log("printed")
 })

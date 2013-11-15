@@ -1,4 +1,11 @@
 <head>
+
+	<style>
+	tbody > tr {
+		cursor: pointer;
+	}
+	</style>
+
 </head>
 <body>
 <table class="table table-hover">
@@ -14,7 +21,7 @@
 		<% @courses.each do |course| %>
 	<tbody>
 		<%= link_to(@course) do %>
-		<tr data-link="<%= course_path(course.id) %>">
+		<tr onclick="location.href='<%= course_path(course.id) %>'">
 			<td><%= "#{course.votes_for}"%></td>
 			<td><%= course.department %></td>
 			<td><%= course.topic %></td>
@@ -24,7 +31,6 @@
 			<% else%>
 				<td><%=  course.user.name %></td>
 			<%end%>
-			<td><%= link_to "See Course", course_path(course.id) %></td>
 			<td><%= link_to "Edit", edit_course_path(course.id) %></td>
 			<td><%= button_to "Destroy", course, :confirm => "Are you sure you want to destroy this course?", method: :delete %></td>
 		</tr>
