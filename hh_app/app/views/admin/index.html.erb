@@ -1,0 +1,49 @@
+<head>
+
+	<style>
+	tbody > tr {
+		cursor: pointer;
+	}
+	</style>
+
+</head>
+<body>
+<table class="table table-hover">
+	<thead>
+		<tr>
+			<th>Editor pick</th>
+			<th>Weird</th>
+			<th>Votes</th>
+			<th>Department</th>
+			<th>Topic</th>
+			<th>Possible Instructor</th>
+			<th>Idea Creator</th>
+			<th>Description</th>
+			<th>ADMIN CONTROLS</th>
+		</tr>
+	</thead>
+		<% @courses.each do |course| %>
+	<tbody>
+		<%= link_to(@course) do %>
+		<tr onclick="location.href='<%= course_path(course.id) %>'">
+			<td><%= course.editor_pick %></td>
+			<td><%= course.weird %></td>
+			<td><%= "#{course.votes_for}"%></td>
+			<td><%= course.department %></td>
+			<td><%= course.topic %></td>
+			<td><%= course.desired_instructor %></td>
+			<%if course.user == nil %>
+				<td>N/A</td>
+			<% else%>
+				<td><%=  course.user.name %></td>
+			<%end%>
+			<td><%= course.description %></td>
+			<td><%= link_to "Edit", edit_course_path(course.id) %></td>
+			<td><%= button_to "Destroy", course, :confirm => "Are you sure you want to destroy this course?", method: :delete %></td>
+			<td><%= button_to "vote up", vote_up_course_path(course.id) %></td>
+		</tr>
+		<% end %>
+	</tbody>
+	<% end %>
+</table>
+</body>

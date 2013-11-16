@@ -27,8 +27,6 @@ class CoursesController < ApplicationController
 
   def edit
     @course = Course.find(params[:id])
-    if @user.id 
-    end
   end
 
   def update

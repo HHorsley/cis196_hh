@@ -11,6 +11,12 @@ HhApp::Application.routes.draw do
   end
 
   resources :users
+
+
+  get "admin/index"
+  post "admin/index"
+  put "admin/index"
+  delete "admin/index"
   
   get "landing_pages/home"
   get "landing_pages/about"

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131114010924) do
+ActiveRecord::Schema.define(:version => 20131115220740) do
 
   create_table "courses", :force => true do |t|
     t.string   "department"
@@ -19,9 +19,11 @@ ActiveRecord::Schema.define(:version => 20131114010924) do
     t.string   "desired_instructor"
     t.text     "description",          :limit => 255
     t.integer  "num_users_interested"
-    t.datetime "created_at",                          :null => false
-    t.datetime "updated_at",                          :null => false
+    t.datetime "created_at",                                             :null => false
+    t.datetime "updated_at",                                             :null => false
     t.integer  "user_id"
+    t.integer  "weird",                               :default => 0
+    t.boolean  "editor_pick",                         :default => false
   end
 
   create_table "penn_reference_infos", :force => true do |t|
