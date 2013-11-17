@@ -28,11 +28,18 @@
   	width: 90%;
   	margin-left: 5%;
   	border-color: rgba(238, 238, 238);
+  	table-layout: fixed;
   }
 
   tbody > tr {
 	cursor: pointer;
-	}
+  }
+
+  table td {
+  	overflow: hidden;
+  }
+
+
 
   </style>
 
@@ -56,7 +63,7 @@
 					<thead>
 						<tr>
 							<th>Votes</th>
-							<th>Department</th>
+							<th>Dept.</th>
 							<th>Topic</th>
 							<th>Ideator</th>
 						</tr>
@@ -89,12 +96,27 @@
 					<thead>
 						<tr>
 							<th>Votes</th>
-							<th>Department</th>
+							<th>Dept.</th>
 							<th>Topic</th>
 							<th>Ideator</th>
 						</tr>
 					</thead>
-					
+					<% @courses.each do |course| %>
+					<tbody>
+						<%= link_to(@course) do %>
+						<tr onclick="location.href='<%= course_path(course.id) %>'">
+							<td><%= "#{course.votes_for}"%></td>
+							<td><%= course.department %></td>
+							<td><%= course.topic %></td>
+							<%if course.user == nil %>
+								<td>N/A</td>
+							<% else%>
+								<td><%=  course.user.name %></td>
+							<%end%>
+						<%end%>
+						<%end%>
+						</tr>
+					</tbody>
 				</table>
 	          </div>
 	          <p><a class="btn" <%= link_to "See more", courses_path %></></a></p>
@@ -106,12 +128,25 @@
 					<thead>
 						<tr>
 							<th>Votes</th>
-							<th>Department</th>
+							<th>Dept.</th>
 							<th>Topic</th>
 							<th>Ideator</th>
 						</tr>
 					</thead>
+					<% @courses.each do |course| %>
 					<tbody>
+						<%= link_to(@course) do %>
+						<tr onclick="location.href='<%= course_path(course.id) %>'">
+							<td><%= "#{course.votes_for}"%></td>
+							<td><%= course.department %></td>
+							<td><%= course.topic %></td>
+							<%if course.user == nil %>
+								<td>N/A</td>
+							<% else%>
+								<td><%=  course.user.name %></td>
+							<%end%>
+						<%end%>
+						<%end%>
 					</tbody>
 				</table>
 	          </div>
