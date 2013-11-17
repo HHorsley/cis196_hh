@@ -101,7 +101,7 @@
 							<th>Ideator</th>
 						</tr>
 					</thead>
-					<% @courses.each do |course| %>
+					<% @courses_top.each do |course| %>
 					<tbody>
 						<%= link_to(@course) do %>
 						<tr onclick="location.href='<%= course_path(course.id) %>'">
@@ -133,7 +133,7 @@
 							<th>Ideator</th>
 						</tr>
 					</thead>
-					<% @courses.each do |course| %>
+					<% @courses_weird.each do |course| %>
 					<tbody>
 						<%= link_to(@course) do %>
 						<tr onclick="location.href='<%= course_path(course.id) %>'">

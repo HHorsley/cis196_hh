@@ -13,10 +13,10 @@ HhApp::Application.routes.draw do
   resources :users
 
 
-  get "admin/index"
-  post "admin/index"
-  put "admin/index"
-  delete "admin/index"
+  get "admin/cockpit"
+  post "admin/cockpit"
+  put "admin/cockpit"
+  delete "admin/cockpit"
   
   get "landing_pages/home"
   get "landing_pages/about"

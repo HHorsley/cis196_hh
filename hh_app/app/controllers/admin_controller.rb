@@ -1,6 +1,6 @@
 class AdminController < ApplicationController
 
-	def index
+	def cockpit
   	@courses = Course.all
 
     if !current_user_email = "hunter.horsley@gmail.com"
