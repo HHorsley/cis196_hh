@@ -12,7 +12,6 @@ HhApp::Application.routes.draw do
 
   resources :users
 
-
   get "admin/cockpit"
   post "admin/cockpit"
   put "admin/cockpit"

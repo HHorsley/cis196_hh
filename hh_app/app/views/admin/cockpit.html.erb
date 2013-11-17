@@ -40,7 +40,9 @@
 			<td><%= course.description %></td>
 			<td><%= link_to "Edit", edit_course_path(course.id) %></td>
 			<td><%= button_to "Destroy", course, :confirm => "Are you sure you want to destroy this course?", method: :delete %></td>
-			<td><%= button_to "vote up", vote_up_course_path(course.id) %></td>
+			<td><%= button_to "Vote Up", vote_up_course_path(course.id) %></td>
+			<td> </td>
+			<td> </td>
 		</tr>
 		<% end %>
 	</tbody>
