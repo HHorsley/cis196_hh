@@ -17,4 +17,14 @@ class Notifications < ActionMailer::Base
 
     mail to: course.user.email
   end
+
+  def new_user (user)
+    @greeting = "Oh, hey there!"
+    @id = user.name
+
+
+    mail to: user.email
+  end
+
+
 end
