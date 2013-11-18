@@ -1,21 +1,26 @@
-<h2>Sign up</h2>
+<h2>Hi there! Come on in.</h2>
+</br>
+<h3>Join your peers</h3>
 
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
-  <div><%= f.label :name %><br />
-  <%= f.text_field :name, :autofocus => true %></div>
+  <div><%= f.label :user_type %>
+    <%= f.select :user_type, options_for_select([["Undergrad", "undergrad"], ["MBA", "mba"], ["Professor", "professor"], ["Other", "other"]], @user.user_type), :autofocus => true %>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email %></div>
+  <div><%= f.label :name %>
+  <%= f.text_field :name, :placeholder => 'Jon Huntsman' %></div>
 
-  <div><%= f.label :password %><br />
-  <%= f.password_field :password %></div>
+  <div><%= f.label :email %>
+  <%= f.email_field :email %><span class="help-inline" style="margin-bottom:10px; margin-left:5px; color:#A2A2A3">Must be @wharton.upenn.edu</span></div>
 
-  <div><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %></div>
+  <div><%= f.label :password %>
+  <%= f.password_field :password%></div>
 
-  <div><%= f.submit "Sign up" %></div>
+  <div><%= f.label :password_confirmation %>
+  <%= f.password_field :password_confirmation%><span class="help-inline" style="margin-bottom:10px; margin-left:5px; color:#A2A2A3">We hate these too. Sorry.</span></div>
+
+  <div><%= f.submit "Sign up", class: "btn btn-warning"%></div>
 <% end %>
-
-<%= render "devise/shared/links" %>
+</br>
+<%= render "devise/shared/links"%>

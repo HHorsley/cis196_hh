@@ -66,6 +66,22 @@ class CoursesController < ApplicationController
     end
   end
 
+  def set_editor_pick
+    course = Course.find(params[:id])
+    course.update_attribute(:editor_pick, true)
+    redirect_to admin_cockpit_path
+    rescue ActiveRecord::RecordInvalid
+      redirect_to admin_cockpit_path 
+  end
+
+  def set_weird
+    course = Course.find(params[:id])
+    course.update_attribute(:weird, course.weird + 1)
+    redirect_to admin_cockpit_path 
+    rescue ActiveRecord::RecordInvalid
+    redirect_to admin_cockpit_path 
+  end
+
 end
 
 

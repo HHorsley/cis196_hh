@@ -53,6 +53,11 @@
     background-color: rgba(99, 182, 145, 0.15);
     }
 
+    a:hover {
+    text-decoration: none;
+    background-color: transparent;
+    }
+
   </style>
   
   <script>
@@ -91,7 +96,7 @@
         </ul>
         <form class="navbar-form pull-right">
           <% if !user_signed_in? %>
-            <button type="link" class="btn"><%= link_to "Sign Up", new_user_path %></button>
+            <button type="link" class="btn"><%= link_to "Sign Up", new_user_registration_path %></button>
             <button type="link" class="btn"><%= link_to "Sign In", user_session_path %></button>
           <% end %>
           <% if user_signed_in? %>

@@ -17,6 +17,13 @@ class UsersController < ApplicationController
       end
   end
 
+  def email_new_user
+    @user = User.new(params[:user])
+    if @user.save
+        Notifications.new_user(@user).deliver
+    end
+  end
+
   def show 
     @user = User.find(params[:id])
   end

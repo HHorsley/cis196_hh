@@ -7,7 +7,10 @@ HhApp::Application.routes.draw do
     member do
       post :vote_up
       post :vote_down
+      post :set_editor_pick
+      post :set_weird
     end
+
   end
 
   resources :users

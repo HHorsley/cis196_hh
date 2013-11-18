@@ -36,6 +36,7 @@
 			<% else%>
 				<td><%=  course.user.name %></td>
 			<%end%>
+			<td><%= button_to "See more", course_path(course.id), class: "btn btn-warning" %>
 		</tr>
 		<% end %>
 	</tbody>
