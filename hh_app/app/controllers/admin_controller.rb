@@ -1,7 +1,7 @@
 class AdminController < ApplicationController
 
 	def cockpit
-	if current_user.email != "hunter.horsley@gmail.com"
+	if current_user.email != "hhorsley@wharton.upenn.edu"
       redirect_to root_path
     end
 

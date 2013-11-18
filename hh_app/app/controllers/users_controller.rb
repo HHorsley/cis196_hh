@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   end
 
   def index
-    if current_user.email != "hunter.horsley@gmail.com"
+    if current_user.email != "hhorsley@wharton.upenn.edu"
       redirect_to root_path
     end
 
@@ -14,8 +14,7 @@ class UsersController < ApplicationController
   def create
   	@user = User.new(params[:user])
   		if @user.save
-        Notifications.new_user(@user).deliver
-  			redirect_to users_path
+  			redirect_to root_path
   		else 
   			render 'new'
       end
@@ -33,7 +32,7 @@ class UsersController < ApplicationController
   end
 
   def edit
-    if current_user.email != "hunter.horsley@gmail.com"
+    if current_user.email != "hhorsley@wharton.upenn.edu"
       redirect_to root_path
     end
 
@@ -50,7 +49,7 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    if current_user.email != "hunter.horsley@gmail.com"
+    if current_user.email != "hhorsley@wharton.upenn.edu"
       redirect_to root_path
     end
 
