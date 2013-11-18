@@ -4,6 +4,12 @@ Hunter Horsley
 The Heroku page: http://duecourse.org/
 
 
+-- 
+(11/18)
+ISSUES: had to figure out mouseout/over. Wish there was a way to disable a button if someone has voted. Would love help w that. Initial searches weren't sufficient.
+
+WHAT I DID: I implemented a change to color of helper text on a form when the user mouses over a div. I know, mindblowing!
+
 --
 (11/12)
 ISSUES: Implementing a scope was pretty straight forward for me. I'm still having trouble with logout which is unrelated to this assignment but I'd love any troubleshooting tips!
