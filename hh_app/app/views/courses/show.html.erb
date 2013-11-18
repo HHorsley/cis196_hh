@@ -11,6 +11,7 @@
 		<p><strong>DESCRIPTION:</strong> <%= @course.description %></p>
 		<p><strong>DESIRED INSTRUCTOR: </strong><%= @course.desired_instructor %></p>
 		<%= "Students requesting: #{@course.votes_for}" %>
-		<%= button_to "VOTE", vote_up_course_path(@course.id), class: "btn btn-success" %>
+		</br>
+		<%= button_to "VOTE", vote_up_course_path(@course.id), class: "btn btn-success btn-large" %>
 	</div>
 </body>

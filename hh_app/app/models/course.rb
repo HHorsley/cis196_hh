@@ -12,7 +12,7 @@ class Course < ActiveRecord::Base
     scope :top, -> { plusminus_tally.order('plusminus_tally DESC').limit(15)}
     scope :home_editor_picks, -> { where(editor_pick: true).limit(3)}
     scope :editor_picks, -> { where(editor_pick: true).limit(10)}
-    scope :home_weird, -> { order(:weird).limit(3)}
-    scope :weird, -> { order(:weird).limit(10)}
+    scope :home_weird, -> { order('weird ASC').limit(3)}
+    scope :weird, -> { order('weird ASC').limit(10)}
 
 end

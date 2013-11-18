@@ -22,16 +22,16 @@
 	</div></br>
 	<div class="field">
 		<p style="margin-bottom: 2px; font-weight: bold; color: #515252">Rough Description</p>
-		<%= f.text_area :description, :style => "height: 200px; width: "%><span class="help-inline" style="margin-top: -330px; margin-left:230px; color:#A2A2A3;">Don't stress! This can be short or long. Don't </br>make it formal sounding; that's boring. </br>Just give everyone a sense for where the idea is </br>coming from. You can include links btw. </br></br>Think for a minute, then fire away. </br>You're gonna crush it.</span>
+		<%= f.text_area :description, :style => "height: 200px; width: "%><span class="help-inline" style="margin-top: 0px; color:#A2A2A3;">Don't stress! This can be short or long. Don't </br>make it formal sounding; that's boring. </br>Just give everyone a sense for where the idea is </br>coming from. You can include links btw. </br></br>Think for a minute, then fire away. </br>You're gonna crush it.</span>
 	</div></br>
 	<div class="field">
 		<p style="margin-bottom: 2px; font-weight: bold; color: #515252">Desired Instructor</p>
-		<%= f.text_field :desired_instructor, :placeholder => 'i.e. Karl Ulrich' %><span class="help-inline" style="margin-top: -45px; margin-left:230px; color:#A2A2A3;">Everything is in play. You could suggest </br> a professor, a student, an alumni, a professional, </br> or just put "unsure."</span>
+		<%= f.text_field :desired_instructor, :placeholder => 'i.e. Karl Ulrich' %><span class="help-inline" style="margin-top: 0px; color:#A2A2A3;">Everything's in play. You can suggest a professor, a student,</br> an alumni, a professional, or just put "unsure."</span>
 	</div></br>
 	<div class="field">
 		<%= f.hidden_field :user_id, :value => current_user.id %>
 	</div>
 	<div class="actions">
-		<%= f.submit "Submit idea", :class => "btn btn-warning btn-large", :style => "margin-top: -10px;"%>
+		<%= f.submit "Submit idea", :class => "btn btn-warning btn-large", :style => "margin-top: -5px;"%>
 	</div>
 <% end %>
