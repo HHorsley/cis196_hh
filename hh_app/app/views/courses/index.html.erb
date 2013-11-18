@@ -30,13 +30,17 @@
 			<td><%= "#{course.votes_for}"%></td>
 			<td><%= course.department %></td>
 			<td><%= course.topic %></td>
-			<td><%= course.desired_instructor %></td>
+			<%if course.desired_instructor == nil %>
+				<td>Unsure</td>
+			<% else %>
+				<td><%= course.desired_instructor %></td>
+			<%end%>
 			<%if course.user == nil %>
 				<td>N/A</td>
 			<% else%>
 				<td><%=  course.user.name %></td>
 			<%end%>
-			<td><%= button_to "See more", course_path(course.id), class: "btn btn-warning" %>
+			<td><%= link_to "See more", course_path(course.id), class: "btn btn-warning btn-small", :style => "vertical-align: center; color: #fff;" %></td>
 		</tr>
 		<% end %>
 	</tbody>

@@ -9,28 +9,29 @@
 	<% end %>
 </div>
 
-<h1>Course Idea</h1>
+<h2>Sweet! What's your idea?</h2>
+</br>
 <%= form_for(@course) do |f| %>
 	<div class="field">
-		<p>Department</p>
-		<%= f.text_field :department, :style => "width: 40px;"%>
-	</div>
+		<p style="margin-bottom: 2px; font-weight: bold; color: #515252">Topic or Title</p>
+		<%= f.text_field :topic, :style => "width: 400px;", :placeholder => 'i.e. Commercial Applications of 3D Printing' %>
+	</div></br>
 	<div class="field">
-		<p>Topic/Title</p>
-		<%= f.text_field :topic %>
-	</div>
+		<p style="margin-bottom: 2px; font-weight: bold; color: #515252">Department</p>
+		<%= f.select :department, options_for_select([["ACCT - Accounting", "accounting"], ["BEPP - Business Economics and Public Policy", "business_economics_and_public_policy"], ["FNCE - Finance", "fiance"], ["HCMG - Health Care Management", "health_care_management"], ["INSR - Insurance and Risk Management", "insurance_and_risk_management"], ["LGST - Legal Studies and Business Ethics", "legal_studies_and_business_ethics"], ["MGMT - Management", "management"], ["MKTG - Marketing", "marketing"], ["OPIM - Operations and Information Management", "operations_and_information_management"], ["REAL - Real Estate", "real_estate"], ["STAT - Statistics", "statistics"], ["Other - Product Design", "other_product_design"], ["Other - Social Impact", "other_social_imact"], ["*IDN - I Don't Know", "i_dont_know"]], @course.department) %>
+	</div></br>
 	<div class="field">
-		<p>Rough Description</p>
-		<%= f.text_area :description, :style => "height: 200px;"%>
-	</div>
+		<p style="margin-bottom: 2px; font-weight: bold; color: #515252">Rough Description</p>
+		<%= f.text_area :description, :style => "height: 200px; width: "%><span class="help-inline" style="margin-top: -330px; margin-left:230px; color:#A2A2A3;">Don't stress! This can be short or long. Don't </br>make it formal sounding; that's boring. </br>Just give everyone a sense for where the idea is </br>coming from. You can include links btw. </br></br>Think for a minute, then fire away. </br>You're gonna crush it.</span>
+	</div></br>
 	<div class="field">
-		<p>Desired instructor</p>
-		<%= f.text_field :desired_instructor %>
-	</div>
+		<p style="margin-bottom: 2px; font-weight: bold; color: #515252">Desired Instructor</p>
+		<%= f.text_field :desired_instructor, :placeholder => 'i.e. Karl Ulrich' %><span class="help-inline" style="margin-top: -45px; margin-left:230px; color:#A2A2A3;">Everything is in play. You could suggest </br> a professor, a student, an alumni, a professional, </br> or just put "unsure."</span>
+	</div></br>
 	<div class="field">
 		<%= f.hidden_field :user_id, :value => current_user.id %>
 	</div>
 	<div class="actions">
-		<%= f.submit %>
+		<%= f.submit "Submit idea", :class => "btn btn-warning btn-large", :style => "margin-top: -10px;"%>
 	</div>
 <% end %>

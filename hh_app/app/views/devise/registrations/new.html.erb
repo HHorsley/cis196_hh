@@ -6,7 +6,7 @@
   <%= devise_error_messages! %>
 
   <div><%= f.label :user_type %>
-    <%= f.select :user_type, options_for_select([["Undergrad", "undergrad"], ["MBA", "mba"], ["Professor", "professor"], ["Other", "other"]], @user.user_type), :autofocus => true %>
+    <%= f.select :user_type, options_for_select([["Undergrad", "undergrad"], ["MBA", "mba"], ["Professor", "professor"], ["Other", "other"]], @user.user_type), :autofocus => true %></div>
 
   <div><%= f.label :name %>
   <%= f.text_field :name, :placeholder => 'Jon Huntsman' %></div>
