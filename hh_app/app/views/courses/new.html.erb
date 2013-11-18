@@ -31,13 +31,13 @@
 		<p style="margin-bottom: 2px; font-weight: bold; color: #515252">Department</p>
 		<%= f.select :department, options_for_select([["ACCT - Accounting", "ACCT"], ["BEPP - Business Economics and Public Policy", "BEPP"], ["FNCE - Finance", "FNCE"], ["HCMG - Health Care Management", "HCMG"], ["INSR - Insurance and Risk Management", "INSR"], ["LGST - Legal Studies and Business Ethics", "LGST"], ["MGMT - Management", "MGMT"], ["MKTG - Marketing", "MKTG"], ["OPIM - Operations and Information Management", "OPIM"], ["REAL - Real Estate", "REAL"], ["STAT - Statistics", "STAT"], ["Other - Product Design", "O-PRD"], ["Other - Social Impact", "O-SOC"], ["*IDN - I Don't Know", "*IDN"]], @course.department) %>
 	</div></br>
-	<div class="field">
+	<div class="field" id="description_input">
 		<p style="margin-bottom: 2px; font-weight: bold; color: #515252">Rough Description</p>
-		<%= f.text_area :description, :style => "height: 200px; width: "%><span class="help-inline" style="margin-top: 0px; color:#A2A2A3;">Don't stress! This can be short or long. Don't </br>make it formal sounding; that's boring. </br>Just give everyone a sense for where the idea is </br>coming from. You can include links btw. </br></br>Think for a minute, then fire away. </br>You're gonna crush it.</span>
+		<%= f.text_area :description, :style => "height: 200px;"%><span class="help-inline" id="help_dont_stress" style="margin-top: 0px; color:#B1B1B3;">Don't stress! This can be short or long. Don't </br>make it formal sounding; that's boring. </br>Just give everyone a sense for where the idea is </br>coming from. You can include links btw. </br></br>Think for a minute, then fire away. </br>You're gonna crush it.</span>
 	</div></br>
-	<div class="field">
+	<div class="field" id="instructor_input">
 		<p style="margin-bottom: 2px; font-weight: bold; color: #515252">Desired Instructor</p>
-		<%= f.text_field :desired_instructor, :placeholder => 'i.e. Karl Ulrich' %><span class="help-inline" style="margin-top: 0px; color:#A2A2A3;">Everything's in play. You can suggest a professor, a student,</br> an alumni, a professional, or just put "unsure."</span>
+		<%= f.text_field :desired_instructor, :placeholder => 'i.e. Karl Ulrich' %><span class="help-inline" style="margin-top: 0px; color:#B1B1B3;" id="help_instructor">Everything's in play. You can suggest a professor, a student,</br> an alumni, a professional, or just put "unsure."</span>
 	</div></br>
 	<div class="field">
 		<%= f.hidden_field :user_id, :value => current_user.id %>
