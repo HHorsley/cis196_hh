@@ -9,21 +9,26 @@ class CoursesController < ApplicationController
   def create
   	@course = Course.new(params[:course])
   	if @course.save 
-      Notifications.new_course(@course).deliver
   		redirect_to courses_path
   	else
   		render 'new'
   	end
   end
 
+
   def index
     @courses = Course.all
+    @courses_newest = Course.by_newest
+    @courses_top = Course.top
+    @courses_editor_picks = Course.editor_picks
+    @courses_weird = Course.weird
+    @courses_dept = Course.by_dept
   end
 
   def show
     @course = Course.find(params[:id])
-
   end
+
 
   def edit
     @course = Course.find(params[:id])

@@ -4,6 +4,10 @@ class UsersController < ApplicationController
   end
 
   def index
+    if current_user.email != "hunter.horsley@gmail.com"
+      redirect_to root_path
+    end
+
   	@users = User.all
   end
 
@@ -29,6 +33,10 @@ class UsersController < ApplicationController
   end
 
   def edit
+    if current_user.email != "hunter.horsley@gmail.com"
+      redirect_to root_path
+    end
+
     @user = User.find(params[:id])
   end
 
@@ -42,6 +50,10 @@ class UsersController < ApplicationController
   end
 
   def destroy
+    if current_user.email != "hunter.horsley@gmail.com"
+      redirect_to root_path
+    end
+
     @user = User.find(params[:id]).destroy
     redirect_to root_path
   end

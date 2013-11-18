@@ -10,10 +10,12 @@ HhApp::Application.routes.draw do
       post :set_editor_pick
       post :set_weird
     end
-
   end
 
   resources :users
+
+  resources :courses
+  
 
   get "admin/cockpit"
   post "admin/cockpit"

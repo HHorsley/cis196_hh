@@ -7,6 +7,11 @@
     border-radius: 3px;
     background-color: rgba(238, 238, 238, 0.7);
   }
+
+  .hero-unit > h3 {
+  	color: #6D6E6D;
+  }
+
   .box_wrappers {
   	display: inline-block;
   	background-color: rgba(99, 182, 145, 0.95);
@@ -14,9 +19,9 @@
   	padding: 2px;
   	width: 30%;
   	margin-left: 32px;
-  	margin-top: 0px;
+  	margin-bottom: 60px;
   }
-  .box_wrappers h3 {
+  .box_wrappers > h3 {
   	text-align: center;
 
   }
@@ -34,11 +39,16 @@
 
   tbody > tr {
 	cursor: pointer;
+	overflow: hidden;
   }
 
   table td {
   	overflow: hidden;
+  	max-height: 80px;
+  	height: 80px;
   }
+
+
 
 
 
@@ -52,15 +62,21 @@
 	  	<img src="https://dl.dropboxusercontent.com/u/45843110/wharton_logo_50.png" alt="Wharton logo">
 	  	</br>
 	  	</br>
-	    <h1>Let’s bring our course ideas to life.</h1></br></br>
+	    <h1>Submit & Vote on Ideas for New Wharton Courses</h1>
+	    <h3>DueCourse is a new tool for Wharton undergrads, MBAs, and professors.</h3>
+	    </br>
 	    <!--<p style="font-family:helvetica;font-weight:thin;font-size:24px;line-height:23pt;padding:10px 0px">Let’s bring our course ideas to life.</p>-->
-	    <p><a class="btn btn-warning btn-large" style="color:#fff" <%= link_to "Create Course Idea »", new_course_path %></></a></p>
+	    <p><a class="btn btn-warning btn-large" style="color:#fff" <%= link_to "Create Course Idea »", new_course_path %></></a>    <%= link_to "More about DueCourse", landing_pages_about_path, :style => "display:inline-block", :class => "btn btn-link btn-large" %></p>
 	  </div>
 	  	<div class="row">
         	<div class="box_wrappers">
 	          <h3>Editor's picks</h3>
 	          <div>
 	          	<table class="table table-hover table-bordered">
+	          		<col width="33px" />
+					<col width="33px" />
+					<col width="64px" />
+					<col width="50px" />
 					<thead>
 						<tr>
 							<th>Votes</th>
@@ -73,8 +89,8 @@
 					<tbody>
 						<%= link_to(@course) do %>
 						<tr onclick="location.href='<%= course_path(course.id) %>'">
-							<td><%= "#{course.votes_for}"%></td>
-							<td><%= course.department %></td>
+							<td style="text-align:center"><%= "#{course.votes_for}"%></td>
+							<td style="text-align:center"><%= course.department %></td>
 							<td><%= course.topic %></td>
 							<%if course.user == nil %>
 								<td>N/A</td>
@@ -94,6 +110,10 @@
 	          <h3>Top ideas</h3>
 	          <div>
 	          	<table class="table table-hover table-bordered">
+	          		<col width="33px" />
+					<col width="33px" />
+					<col width="64px" />
+					<col width="50px" />
 					<thead>
 						<tr>
 							<th>Votes</th>
@@ -106,8 +126,8 @@
 					<tbody>
 						<%= link_to(@course) do %>
 						<tr onclick="location.href='<%= course_path(course.id) %>'">
-							<td><%= "#{course.votes_for}"%></td>
-							<td><%= course.department %></td>
+							<td style="text-align:center"><%= "#{course.votes_for}"%></td>
+							<td tstyle="text-align:center"><%= course.department %></td>
 							<td><%= course.topic %></td>
 							<%if course.user == nil %>
 								<td>N/A</td>
@@ -126,6 +146,10 @@
 	          <h3>Weirdest ideas</h3>
 	          <div>
 	          	<table class="table table-hover table-bordered">
+	          		<col width="33px" />
+					<col width="33px" />
+					<col width="64px" />
+					<col width="50px" />
 					<thead>
 						<tr>
 							<th>Votes</th>
@@ -138,8 +162,8 @@
 					<tbody>
 						<%= link_to(@course) do %>
 						<tr onclick="location.href='<%= course_path(course.id) %>'">
-							<td><%= "#{course.votes_for}"%></td>
-							<td><%= course.department %></td>
+							<td style="text-align:center"><%= "#{course.votes_for}"%></td>
+							<td style="text-align:center"><%= course.department %></td>
 							<td><%= course.topic %></td>
 							<%if course.user == nil %>
 								<td>N/A</td>

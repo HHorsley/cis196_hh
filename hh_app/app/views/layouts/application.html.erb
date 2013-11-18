@@ -37,12 +37,7 @@
     }
 
     .yield_container {
-    background-color: rgba(230, 230, 230, 0.90);
-    position: absolute;
-    width: 100%;
     padding-top: 120px;
-    padding-bottom: 155px;
-    height: 70%;
     }
     
     .navbar-inverse .nav {
@@ -56,7 +51,7 @@
     }
 
     .yield {
-      padding: 0 auto 0 auto;
+      padding-bottom: 80px;
     }
 
     a:hover {
@@ -79,7 +74,7 @@
 
 
 </head>
-<body style= "background-image:url(https://dl.dropboxusercontent.com/u/45843110/prof_huge_chalk_board_bw_2.jpg);">
+<body style= "background-image:url(https://dl.dropboxusercontent.com/u/45843110/prof_huge_chalk_board_bw_transparent.jpg);">
 <div class="yield_container">
 <div class="navbar navbar-inverse navbar-fixed-top">
   <div class="navbar-inner">
@@ -125,7 +120,7 @@
   <p class="alert alert-error"><%= alert %></p>
 <% end %>
 
-<div class="yield span8 offset2"><%= yield %></div>
+<div class="yield"><%= yield %></div>
 
 </div>
 </body>

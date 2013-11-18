@@ -6,18 +6,61 @@
 	}
 
 	table {
-		margin-left: 15% ;
+		margin-left: 5% ;
 	}
+
+	table > tbody > tr > td {
+		overflow: hidden;
+		height: 40px;
+	}
+
+	.table {
+		table-layout: fixed;
+	}
+
+
+	.box_background {
+		text-align: center;
+		margin-left: 10%;
+
+	}
+
+	body {
+	}
+
+	.box_wrappers {
+		display: inline-block;
+  		background-color: rgba(99, 182, 145, 0.95);
+  		border-radius: 3px;
+  		padding: 2px;
+  		padding-top: 15px;
+  		margin: 0 15%;
+  }
 
 	</style>
 
 </head>
 <body>
-<table class="table table-hover">
+
+<div class= "box_background">
+<h2>Course ideas</h2>
+<h4>Click on any of the ideas to see a description and to vote</h4>
+</div>
+
+</br>
+</br>
+<div class="box_wrappers">
+<table class="table table-hover span11">
+	<col width="55px" />
+    <col width="105px" />
+    <col width="420px" />
+    <col width="150px" />
+    <col width="150px" />
+    <col width="100px" />
 	<thead>
 		<tr>
-			<th>Votes</th>
-			<th>Department</th>
+			<th style="text-align:center">Votes</th>
+			<th style="text-align:center">Department</th>
 			<th>Topic</th>
 			<th>Possible Instructor</th>
 			<th>Idea Creator</th>
@@ -27,23 +70,27 @@
 	<tbody>
 		<%= link_to(@course) do %>
 		<tr onclick="location.href='<%= course_path(course.id) %>'">
-			<td><%= "#{course.votes_for}"%></td>
-			<td><%= course.department %></td>
+			<td style="text-align:center"><%= "#{course.votes_for}"%></td>
+			<td style="text-align:center"><%= course.department %></td>
 			<td><%= course.topic %></td>
 			<%if course.desired_instructor == nil %>
 				<td>Unsure</td>
+			<% else %><%if course.desired_instructor == "" %>
+				<td>Unsure</td>
 			<% else %>
 				<td><%= course.desired_instructor %></td>
+			<%end%>
 			<%end%>
 			<%if course.user == nil %>
 				<td>N/A</td>
 			<% else%>
 				<td><%=  course.user.name %></td>
 			<%end%>
-			<td><%= link_to "See more", course_path(course.id), class: "btn btn-warning btn-small", :style => "vertical-align: center; color: #fff;" %></td>
+			<td style="border-top: 2px solid rgba(99, 182, 145, 1)"><%= link_to "See more", course_path(course.id), class: "btn btn-warning btn-small", :style => "vertical-align: center; color: #fff; float:center" %></td>
 		</tr>
 		<% end %>
 	</tbody>
 	<% end %>
 </table>
+</div>
 </body>

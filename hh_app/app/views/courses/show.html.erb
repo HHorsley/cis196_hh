@@ -1,17 +1,92 @@
 <!DOCTYPE html>
 
 <head>
+
+	<style>
+	.main_container {
+		margin-left: 250px;
+	}
+
+	.main_stuff {
+	  	background-color: rgba(99, 182, 145, 0.95);
+	  	border-radius: 3px;
+	  	padding: 6px;
+	  	padding-left: 20px;
+	  	padding-top: 15px;
+	  	width: 620px;
+	  	min-height: 190px;
+	}
+
+	.main_stuff > p {
+		font-size: 11pt;
+		line-height: 18pt;
+	}
+
+	.main_stuff > p > strong {
+		font-size: 12pt;
+		line-height: 20pt;
+	}
+
+	.header_stuff {
+		max-width: 620px;
+
+	}
+
+	.header_stuff > p {
+		color: #6D6E6D;
+		font-size: 11pt;
+		line-height: 10px;
+	}
+
+	.vote_stuff {
+		position: absolute;
+		margin-right: 0px;
+		width:180px;
+		margin-top: 10px;
+		margin-left: 940px;
+	}
+
+	.vote_count_num {
+		font-family: helvetica, verdana;
+		font-weight: 200;
+		font-size: 36pt;
+		background-color: #fff; 
+		padding: 20pt;
+		border-radius: 3px;
+		text-align: center;
+		border-top: 5px solid rgba(99, 182, 145, 0.95);
+	}
+	.vote_count_words {
+		font-family: helvetica, verdana;
+		font-weight: 800;
+		font-size: 18pt;
+		background-color: rgba(99, 182, 145, 0.95); 
+		padding: 4pt;
+		border-radius: 3px;
+		text-align: center;
+		margin-bottom: -6px;
+	}
+
+	</style>
 </head>
 
 <body>
-	<div>
-		<h2><%= @course.department %></h2>
-		<h2><%= @course.topic %></h2>
-		<p><strong>IDEATOR:</strong> <%= @course.user.name %></p>
-		<p><strong>DESCRIPTION:</strong> <%= @course.description %></p>
-		<p><strong>DESIRED INSTRUCTOR: </strong><%= @course.desired_instructor %></p>
-		<%= "Students requesting: #{@course.votes_for}" %>
+
+	<div class="vote_stuff">
+		<p class="vote_count_words">Vote Count</p>
+		<p class="vote_count_num"><%= "#{@course.votes_for}"%></p>
 		</br>
-		<%= button_to "VOTE", vote_up_course_path(@course.id), class: "btn btn-success btn-large" %>
+		<%= button_to "VOTE", vote_up_course_path(@course.id), class: "btn btn-success btn-block btn-large" %>
+	</div>
+	<div class ="main_container">
+		<div class ="header_stuff">
+			<h3><%= @course.department %>: <%= @course.topic %></h3></br>
+
+			<p><strong>IDEATOR: </strong><%if @course.user == nil %>N/A<% else%><%=  @course.user.name %><%end%></p>
+			<p><strong>DESIRED INSTRUCTOR: </strong><%if @course.desired_instructor == nil %>Unsure<% else %><%if @course.desired_instructor == "" %>Unsure<% else %><%= @course.desired_instructor %><%end%><% end %></p>
+		</div>
+		<div class ="main_stuff">
+			<p><strong>DESCRIPTION</strong></br><%if @course.description == "" %>[<%= @course.user.name %> didn't give a description.]<% else %><%= @course.description %><% end %></p>
+		</div>
 	</div>
 </body>

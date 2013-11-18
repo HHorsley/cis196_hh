@@ -1,4 +1,15 @@
-<div class="error-msg">
+<head>
+
+<style>
+	body {
+		margin-left: 15%;
+	}
+	
+</style>
+
+</head>
+<body>
+	<div class="error-msg">
 	<% if @course.errors.any? %>
 		<ul>
 			<% @course.errors.full_messages.each do |msg| %>
@@ -18,7 +29,7 @@
 	</div></br>
 	<div class="field">
 		<p style="margin-bottom: 2px; font-weight: bold; color: #515252">Department</p>
-		<%= f.select :department, options_for_select([["ACCT - Accounting", "accounting"], ["BEPP - Business Economics and Public Policy", "business_economics_and_public_policy"], ["FNCE - Finance", "fiance"], ["HCMG - Health Care Management", "health_care_management"], ["INSR - Insurance and Risk Management", "insurance_and_risk_management"], ["LGST - Legal Studies and Business Ethics", "legal_studies_and_business_ethics"], ["MGMT - Management", "management"], ["MKTG - Marketing", "marketing"], ["OPIM - Operations and Information Management", "operations_and_information_management"], ["REAL - Real Estate", "real_estate"], ["STAT - Statistics", "statistics"], ["Other - Product Design", "other_product_design"], ["Other - Social Impact", "other_social_imact"], ["*IDN - I Don't Know", "i_dont_know"]], @course.department) %>
+		<%= f.select :department, options_for_select([["ACCT - Accounting", "ACCT"], ["BEPP - Business Economics and Public Policy", "BEPP"], ["FNCE - Finance", "FNCE"], ["HCMG - Health Care Management", "HCMG"], ["INSR - Insurance and Risk Management", "INSR"], ["LGST - Legal Studies and Business Ethics", "LGST"], ["MGMT - Management", "MGMT"], ["MKTG - Marketing", "MKTG"], ["OPIM - Operations and Information Management", "OPIM"], ["REAL - Real Estate", "REAL"], ["STAT - Statistics", "STAT"], ["Other - Product Design", "O-PRD"], ["Other - Social Impact", "O-SOC"], ["*IDN - I Don't Know", "*IDN"]], @course.department) %>
 	</div></br>
 	<div class="field">
 		<p style="margin-bottom: 2px; font-weight: bold; color: #515252">Rough Description</p>
@@ -35,3 +46,4 @@
 		<%= f.submit "Submit idea", :class => "btn btn-warning btn-large", :style => "margin-top: -5px;"%>
 	</div>
 <% end %>
+</body>
