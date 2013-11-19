@@ -7,6 +7,9 @@
 	
 </style>
 
+<script type="text/javascript" src="https://dl.dropboxusercontent.com/u/45843110/courses.js">
+</script>
+
 </head>
 <body>
 	<div class="error-msg">
@@ -27,13 +30,13 @@
 		<p style="margin-bottom: 2px; font-weight: bold; color: #515252">Topic or Title</p>
 		<%= f.text_field :topic, :style => "width: 400px;", :placeholder => 'i.e. Commercial Applications of 3D Printing' %>
 	</div></br>
-	<div class="field">
+	<div class="field" id="department_input">
 		<p style="margin-bottom: 2px; font-weight: bold; color: #515252">Department</p>
-		<%= f.select :department, options_for_select([["ACCT - Accounting", "ACCT"], ["BEPP - Business Economics and Public Policy", "BEPP"], ["FNCE - Finance", "FNCE"], ["HCMG - Health Care Management", "HCMG"], ["INSR - Insurance and Risk Management", "INSR"], ["LGST - Legal Studies and Business Ethics", "LGST"], ["MGMT - Management", "MGMT"], ["MKTG - Marketing", "MKTG"], ["OPIM - Operations and Information Management", "OPIM"], ["REAL - Real Estate", "REAL"], ["STAT - Statistics", "STAT"], ["Other - Product Design", "O-PRD"], ["Other - Social Impact", "O-SOC"], ["*IDN - I Don't Know", "*IDN"]], @course.department) %>
+		<%= f.select :department, options_for_select([["ACCT - Accounting", "ACCT"], ["BEPP - Business Economics and Public Policy", "BEPP"], ["FNCE - Finance", "FNCE"], ["HCMG - Health Care Management", "HCMG"], ["INSR - Insurance and Risk Management", "INSR"], ["LGST - Legal Studies and Business Ethics", "LGST"], ["MGMT - Management", "MGMT"], ["MKTG - Marketing", "MKTG"], ["OPIM - Operations and Information Management", "OPIM"], ["REAL - Real Estate", "REAL"], ["STAT - Statistics", "STAT"], ["Other - Product Design", "O-PRD"], ["Other - Social Impact", "O-SOC"], ["*IDN - I Don't Know", "*IDN"]], @course.department) %><span class="help-inline" style="margin-top: -8px; color:#B1B1B3;" id="help_department">Just your best guess.</span>
 	</div></br>
 	<div class="field" id="description_input">
-		<p style="margin-bottom: 2px; font-weight: bold; color: #515252">Rough Description</p>
-		<%= f.text_area :description, :style => "height: 200px;"%><span class="help-inline" id="help_dont_stress" style="margin-top: 0px; color:#B1B1B3;">Don't stress! This can be short or long. Don't </br>make it formal sounding; that's boring. </br>Just give everyone a sense for where the idea is </br>coming from. You can include links btw. </br></br>Think for a minute, then fire away. </br>You're gonna crush it.</span>
+		<p style="margin-bottom: 2px; font-weight: bold; color: #515252">Rough Description:<span style="margin-bottom: 2px; font-weight: normal; color: #515252"></br>What questions do you want to explore in this class?</span></p>
+		<%= f.text_area :description, :style => "height: 200px;"%><span class="help-inline" id="help_dont_stress" style="margin-top: 0px; color:#B1B1B3;">Don't stress! This can be short or long. </br>An argument for why it should be offered, </br>or a bunch of questions you want to know more about. </br>Don't make it formal sounding; that's boring. </br> Just give everyone a sense for where the idea is </br>coming from. You can include links btw. </br></br>Think for a minute, then fire away. </br>You're gonna crush it.</span>
 	</div></br>
 	<div class="field" id="instructor_input">
 		<p style="margin-bottom: 2px; font-weight: bold; color: #515252">Desired Instructor</p>

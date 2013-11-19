@@ -1,5 +1,15 @@
 
 $(function(){
+	$("#department_input").mouseover(function(){
+		$("#help_department").css("color","#515252");
+	});
+	$("#department_input").mouseout(function(){
+  		$("#help_department").css("color","#B1B1B3");
+	});
+});
+
+
+$(function(){
 	$("#description_input").mouseover(function(){
 		$("#help_dont_stress").css("color","#515252");
 	});
