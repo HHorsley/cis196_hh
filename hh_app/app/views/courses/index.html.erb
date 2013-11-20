@@ -62,6 +62,10 @@
   		color: #666;
   	}
 
+  	#sort_link {
+  		color: #666;
+  	}
+
 	</style>
 
 </head>
@@ -76,11 +80,11 @@
 </br>
 <div class="sort_by_box">
 	<h5>SORT BY</h5>
-	<p><%= link_to "Newest", scoped_path("by_newest") %></p></br>
-	<p><%= link_to "Department", scoped_path("by_dept") %></p></br>
-	<p><%= link_to "Most Votes", scoped_path("top") %></p></br>
-	<p><%= link_to "Editor's Picks", scoped_path("editor_picks") %></p></br>
-	<p><%= link_to "Weirdness", scoped_path("weird") %></p></br>
+	<p><%= link_to "Newest", scoped_path("by_newest"), id: "sort_link" %></p></br>
+	<p><%= link_to "Department", scoped_path("by_dept"), id: "sort_link" %></p></br>
+	<p><%= link_to "Most Votes", scoped_path("top"), id: "sort_link" %></p></br>
+	<p><%= link_to "Editor's Picks", scoped_path("editor_picks"), id: "sort_link" %></p></br>
+	<p><%= link_to "Weirdness", scoped_path("weird"), id: "sort_link" %></p></br>
 </div>
 <div class="box_wrappers">
 <table class="table table-hover span11">
