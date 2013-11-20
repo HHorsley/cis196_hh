@@ -14,9 +14,9 @@ HhApp::Application.routes.draw do
 
   resources :users
 
-  resources :courses
+  get "courses/by/:scope_param", to: "courses#index_scoped", as: "scoped"
   
-
+  
   get "admin/cockpit"
   post "admin/cockpit"
   put "admin/cockpit"

@@ -15,6 +15,6 @@ class Course < ActiveRecord::Base
     scope :home_weird, -> { order('weird DESC').limit(3)}
     scope :weird, -> { order('weird DESC').limit(15)}
     scope :by_newest, -> { order('created_at DESC').limit(15)}
-    scope :by_dept, -> { where(:department).limit(15)}
+    scope :by_dept, -> { order(:department).limit(20)}
 
 end

@@ -68,6 +68,17 @@
 	}
 
 	</style>
+
+	<script> 
+
+	$(function() {
+		$(".disabled").click(function(){
+			return false;
+		});
+	});
+
+	</script>
+
 </head>
 
 <body>
@@ -76,7 +87,11 @@
 		<p class="vote_count_words">Vote Count</p>
 		<p class="vote_count_num"><%= "#{@course.votes_for}"%></p>
 		</br>
+		<% if @course.votes.where("voter_id == ?", current_user.id).length() == 0 %>	
 		<%= button_to "VOTE", vote_up_course_path(@course.id), class: "btn btn-success btn-block btn-large" %>
+		<% else %>
+		<%= button_to "VOTE", vote_up_course_path(@course.id), class: "btn btn-success btn-block btn-large disabled" %>
+		<% end %>
 	</div>
 	<div class ="main_container">
 		<div class ="header_stuff">

@@ -17,12 +17,26 @@ class CoursesController < ApplicationController
 
 
   def index
-    @courses = Course.all
+    @courses = Course.by_dept
     @courses_newest = Course.by_newest
     @courses_top = Course.top
     @courses_editor_picks = Course.editor_picks
     @courses_weird = Course.weird
     @courses_dept = Course.by_dept
+  end
+
+  def index_scoped
+    if params[:scope_param] == "weird"
+      @courses = Course.weird
+    end
+    if params[:scope_param] == "top"
+      @courses = Course.top
+    end
+    if params[:scope_param] == "editor_picks"
+      @courses = Course.editor_picks
+    end
+
+    render 'index'
   end
 
   def show
@@ -48,6 +62,13 @@ class CoursesController < ApplicationController
     @course.destroy
     redirect_to courses_path
   end
+
+  def who_voted  #for the view; displays who likes the post
+  @course = Course.find(params[:id])
+  @users = @course.voters_who_voted
+  render 'show_users_who_voted'
+  end
+
 
   def vote_up
     begin
