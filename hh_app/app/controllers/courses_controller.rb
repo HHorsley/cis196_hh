@@ -35,6 +35,12 @@ class CoursesController < ApplicationController
     if params[:scope_param] == "editor_picks"
       @courses = Course.editor_picks
     end
+    if params[:scope_param] == "by_dept"
+      @courses = Course.by_dept
+    end
+    if params[:scope_param] == "by_newest"
+      @courses = Course.by_newest
+    end
 
     render 'index'
   end

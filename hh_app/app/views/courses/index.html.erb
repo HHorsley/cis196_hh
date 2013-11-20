@@ -36,6 +36,31 @@
   		padding-top: 15px;
   		margin: 0 15%;
   }
+  	.sort_by_box {
+  		position: absolute;
+  		margin: 0 6%;
+  		background-color: rgba(99, 182, 145, 0.95);
+  		border-radius: 3px;
+  		padding: 3px;
+  		padding-top: 15px;
+
+  	}
+
+  	.sort_by_box > h5 {
+  		font-size: 10pt;
+  		font-weight: bold;
+  		text-align: center;
+  	}
+
+  	.sort_by_box > p {
+  		font-size: 9pt;
+  		font-weight: bold;
+  		padding: 0 5px;
+  		text-align: right;
+  		margin-bottom: 0px;
+  		margin-top: 0px;
+  		color: #666;
+  	}
 
 	</style>
 
@@ -49,6 +74,14 @@
 
 </br>
 </br>
+<div class="sort_by_box">
+	<h5>SORT BY</h5>
+	<p><%= link_to "Newest", scoped_path("by_newest") %></p></br>
+	<p><%= link_to "Department", scoped_path("by_dept") %></p></br>
+	<p><%= link_to "Most Votes", scoped_path("top") %></p></br>
+	<p><%= link_to "Editor's Picks", scoped_path("editor_picks") %></p></br>
+	<p><%= link_to "Weirdness", scoped_path("weird") %></p></br>
+</div>
 <div class="box_wrappers">
 <table class="table table-hover span11">
 	<col width="55px" />
