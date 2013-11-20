@@ -110,7 +110,7 @@
 			<td style="text-align:center">
 				<%= "#{course.votes_for}"%></br>
 				<% if current_user.present? %>
-					<% if course.votes.where("voter_id == ?", current_user.id).length() != 0 %>
+					<% if course.votes.where("voter_id = ?", current_user.id).length() != 0 %>
 						<span style="font-size:7pt; font-family:helvetica,arial,verdana;">VOTED!</span>
 					<%end%>
 				<%end%>
