@@ -2,6 +2,10 @@
 
 <head>
 
+	<% content_for :head do %>: <%= @course.topic %>
+	<% end %>
+
+
 	<style>
 	.main_container {
 		margin-left: 250px;
@@ -102,7 +106,7 @@
 		<% end %>
 		</br>
 		</br>
-		<div class="fb-like" data-href="<%= request.original_url%>" data-width="100" data-layout="standard" data-action="like" data-show-faces="true" data-share="false" data-colorscheme="dark" data-ref="fb-share"></div>
+		<div class="fb-like" data-href="http://duecourse.org/courses/<%= (@course.id)%>" data-width="100" data-layout="standard" data-action="like" data-show-faces="true" data-share="false" data-colorscheme="dark" data-ref="fb-share"></div>
 
 	</div>
 	<div class ="main_container">

@@ -114,6 +114,10 @@ class CoursesController < ApplicationController
     redirect_to admin_cockpit_path 
   end
 
+  def original_url
+    base_url + original_fullpath
+  end
+
 end
 
 
