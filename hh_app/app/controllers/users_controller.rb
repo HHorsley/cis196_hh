@@ -58,7 +58,7 @@ class UsersController < ApplicationController
   end
 
   def sign_out
-    redirect_to root
+    redirect_to root_path
   end
 
 
