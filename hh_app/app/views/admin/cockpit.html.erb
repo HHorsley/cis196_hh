@@ -3,6 +3,7 @@
 	<style>
 	tbody > tr {
 		cursor: pointer;
+		max-height: 400px;
 	}
 
 	table {
@@ -60,9 +61,10 @@
 			<td><%= course.description %></td>
 			<td><%= link_to "Edit", edit_course_path(course.id) %></td>
 			<td><%= button_to "Destroy", course, :confirm => "Are you sure you want to destroy this course?", method: :delete, class: "btn btn-danger btn-small" %></td>
-			<td><%= button_to "Vote Up", vote_up_course_path(course.id), class: "btn btn-default btn-small" %></td>
-			<td><%= button_to "Make Editor's Pick", {:controller => "courses", :action => "set_editor_pick", :id => course.id}, class: "btn btn-default btn-small" %></td>
-            <td><%= button_to "+1 Weirdness", {:controller => "courses", :action => "set_weird", :id => course.id}, class: "btn btn-default btn-small" %></td> 
+			<td><%= button_to "EP On", {:controller => "courses", :action => "set_editor_pick", :id => course.id}, class: "btn btn-default btn-small" %></td>
+			<td><%= button_to "EP Off", {:controller => "courses", :action => "set_editor_pick_down", :id => course.id}, class: "btn btn-default btn-small" %></td>
+            <td><%= button_to "+1 Weird", {:controller => "courses", :action => "set_weird", :id => course.id}, class: "btn btn-default btn-small" %></td>
+            <td><%= button_to "-1 Weird", {:controller => "courses", :action => "set_weird_down", :id => course.id}, class: "btn btn-default btn-small" %></td>  
 		</tr>
 		<% end %>
 	</tbody>
