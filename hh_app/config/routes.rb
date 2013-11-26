@@ -8,7 +8,9 @@ HhApp::Application.routes.draw do
       post :vote_up
       post :vote_down
       post :set_editor_pick
+      post :set_editor_pick_down
       post :set_weird
+      post :set_weird_down
     end
   end
 
