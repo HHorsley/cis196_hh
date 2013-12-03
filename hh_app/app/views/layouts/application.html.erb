@@ -98,14 +98,14 @@
           </li>
         </ul>
         <form class="navbar-form pull-right">
-          <% if !user_signed_in? %>
-            <button type="link" class="btn"><%= link_to "Sign Up", new_user_registration_path %></button>
-            <button type="link" class="btn"><%= link_to "Sign In", user_session_path %></button>
+           <% if !user_signed_in? %>
+            <button type="submit" class="btn" formaction=<%= new_user_registration_path%>>Sign Up</button>
+            <button type="submit" class="btn" formaction=<%= new_user_session_path%>>Sign In</button>
           <% end %>
           <% if user_signed_in? %>
-          <ul class="nav">
-            <li style="color:white"><%= link_to 'Logout', destroy_user_session_path, :method => :delete %> </li>
-          </ul>
+            <ul class="nav">
+              <li><a class="" href=<%= destroy_user_session_path%>>Logout</a></li>
+            </ul>
           <% end %>
         </form>
       </div>
