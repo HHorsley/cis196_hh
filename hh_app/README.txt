@@ -8,6 +8,7 @@ DESCRIPTION: DueCourse is an app for submitting ideas for new courses and voting
 OVERVIEW:
 - url: http://duecourse.org
 - heroku: http://duecourse.herokuapp.com
+- Use a fake @wharton.upenn.edu email to sign up (there's a validator that requires that email type, but it doesn't confirm that it's a real email)
 - CSS: You'll see in the headers of the view layouts that I'm pulling in Bootstrap from a CDN. I then modify the CSS on most pages in the header (in the future I'd use a seperate CSS file which is better form but didn't make sense here). There's a ton of custom styling. There's also occasionally styling in the body of the html, but I tried to keep that to a minimum (again, I know it's undesirable; I'd like there to be less).
 - JavaScript: I used JS on the new course creation view (to highlight helper text on hover for the form). I also used JS on the show page for looking at an individual course so if you have already voted for a course, it doesn't accept a click (even though the database is smart enough to reject a second vote and the styling makes the button look grayed out if you've voted already using erb, it was necessary to have the JS because if you clicked, it would refresh the page).
 -Gems: I used several Gems. 
@@ -17,7 +18,7 @@ OVERVIEW:
 	- LetterOpener (to handle mailers on local host): https://github.com/ryanb/letter_opener
 	- jQuery (to handle JavaScript): http://rubygems.org/gems/jquery-rails
 	- Makes Votable & Acts As Votable (two others I explored for voting): https://github.com/ryanto/acts_as_votable, https://github.com/ryanto/acts_as_votable
--Heroku Addons: I used Sengrid mailer: http://sendgrid.com/docs/Integrate/Frameworks/rubyonrails.html
+-Heroku Addons: I used Sengrid mailer (it sends you an email when you create a new course idea): http://sendgrid.com/docs/Integrate/Frameworks/rubyonrails.html
 -Other Addons/Libraries/Gems: I also added Google Anayltics, FB Like (on course show view)
 -Resources: I have many resources. In the database the main three tables are users, courses, and votes. Votes has scopes, belongs to two things, and a validator. User has 5 validators and acts as voter. Course acts as votable, belongs to user, has a TON of scopes, and two validators. There are a lot of routes, most resources are CRUD, but there are some custom one off routes too (landing page, admin, etc).
 -Validators: there are at least 6 across users, course, and votes.
