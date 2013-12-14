@@ -1,9 +1,33 @@
 Hunter Horsley
 
 --
-The Heroku page: http://duecourse.org/
+DESCRIPTION FOR FINAL PROJECT
+
+DESCRIPTION: DueCourse is an app for submitting ideas for new courses and voting on them. The purpose is to create a channel of communication to allow students to be involved in the process by which the school decides on what new courses to offer. In terms of functionality, the main things it includes things it includes: create an account, submit a course idea, browse course ideas, sort course ideas, vote on course ideas.
+
+OVERVIEW:
+- url: http://duecourse.org
+- heroku: http://duecourse.herokuapp.com
+- CSS: You'll see in the headers of the view layouts that I'm pulling in Bootstrap from a CDN. I then modify the CSS on most pages in the header (in the future I'd use a seperate CSS file which is better form but didn't make sense here). There's a ton of custom styling. There's also occasionally styling in the body of the html, but I tried to keep that to a minimum (again, I know it's undesirable; I'd like there to be less).
+- JavaScript: I used JS on the new course creation view (to highlight helper text on hover for the form). I also used JS on the show page for looking at an individual course so if you have already voted for a course, it doesn't accept a click (even though the database is smart enough to reject a second vote and the styling makes the button look grayed out if you've voted already using erb, it was necessary to have the JS because if you clicked, it would refresh the page).
+-Gems: I used several Gems. 
+	- Devise (to handle account creation): https://github.com/plataformatec/devise
+	- Cancan (to handle permissions): https://github.com/ryanb/cancan
+	- ThumbsUp (to handle voting): https://github.com/bouchard/thumbs_up
+	- LetterOpener (to handle mailers on local host): https://github.com/ryanb/letter_opener
+	- jQuery (to handle JavaScript): http://rubygems.org/gems/jquery-rails
+	- Makes Votable & Acts As Votable (two others I explored for voting): https://github.com/ryanto/acts_as_votable, https://github.com/ryanto/acts_as_votable
+-Heroku Addons: I used Sengrid mailer: http://sendgrid.com/docs/Integrate/Frameworks/rubyonrails.html
+-Other Addons/Libraries/Gems: I also added Google Anayltics, FB Like (on course show view)
+-Resources: I have many resources. In the database the main three tables are users, courses, and votes. Votes has scopes, belongs to two things, and a validator. User has 5 validators and acts as voter. Course acts as votable, belongs to user, has a TON of scopes, and two validators. There are a lot of routes, most resources are CRUD, but there are some custom one off routes too (landing page, admin, etc).
+-Validators: there are at least 6 across users, course, and votes.
+-Scopes: there are at least 8 across courses and votes.
+-I really appreciate all the help this semester.
 
 
+
+--
+PREVIOUS SUBMISSION NOTES FROM HW
 -- 
 (11/18)
 ISSUES: had to figure out mouseout/over. Wish there was a way to disable a button if someone has voted. Would love help w that. Initial searches weren't sufficient.

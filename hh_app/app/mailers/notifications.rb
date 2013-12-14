@@ -12,8 +12,7 @@ class Notifications < ActionMailer::Base
 
   def new_course (course)
 
-    @course = course
-    mail( :to => @course.user.email,
+    mail( :to => course.user.email,
     :subject => 'Idea submitted!')
     @greeting = "Oh, hey there!"
     @id = course.topic
@@ -22,8 +21,7 @@ class Notifications < ActionMailer::Base
 
   def new_user (user)
 
-    @user = user
-    mail( :to => @user.email,
+    mail( :to => user.email,
     :subject => 'Welcome to DueCourse!')
     @greeting = "Oh, hey there!"
     @id = user.name

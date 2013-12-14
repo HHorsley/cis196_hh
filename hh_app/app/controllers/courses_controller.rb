@@ -9,6 +9,7 @@ class CoursesController < ApplicationController
   def create
   	@course = Course.new(params[:course])
   	if @course.save 
+      Notifications.new_course(@course).deliver
   		redirect_to courses_path
   	else
   		render 'new'

@@ -14,6 +14,7 @@ class UsersController < ApplicationController
   def create
   	@user = User.new(params[:user])
   		if @user.save
+        Notifications.new_user(@user).deliver
   			redirect_to root_path
   		else 
   			render 'new'
