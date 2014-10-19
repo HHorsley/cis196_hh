@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
 
   validates :name, presence: true 
   validates :password, length: {within: 5..15} 
-  emailFormatValidation =/[a-z.-]+@wharton.upenn.edu+/i 
+  emailFormatValidation =/[a-z.-]+.upenn.edu+/i 
   validates :email, format: {with: emailFormatValidation}, uniqueness: true
   validates :password, confirmation: true
 
